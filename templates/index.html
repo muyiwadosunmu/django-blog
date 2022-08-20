@@ -28,71 +28,74 @@
     <section class="pt-0">
       <div class="container">
         <!-- Post-->
+        {% for object_list in queryset %}
         <div class="row d-flex align-items-stretch g-0">
           <div class="col-lg-7">
             <div class="text-inner d-flex align-items-center h-100 bg-light">
               <div class="content px-4 px-lg-5">
                 <ul class="list-inline mb-1">
-                  <li class="list-inline-item"><a class="text-uppercase text-dark small fw-bold" href="!#">Business</a></li>
-                  <li class="list-inline-item"><a class="text-uppercase text-dark small fw-bold" href="!#">Technology</a></li>
+                    {% for cat in object_list.categories.all %}
+                    <li class="list-inline-item"><a class="text-uppercase text-dark small fw-bold" href="!#">{{ cat.title }}</a></li>
+                    {% endfor %}
                 </ul>
-                <h2 class="h4 mb-3"><a class="text-dark" href="post.html">Alberto Savoia Can Teach You About Interior</a></h2>
-                <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                <h2 class="h4 mb-3"><a class="text-dark" href="post.html">{{ object_list.title }}</a></h2>
+                <p class="text-sm">{{ object_list.overview }}</p>
                 <ul class="list-inline list-separated text-gray-500 mb-0">
                   <li class="list-inline-item"><a class="d-flex align-items-center flex-wrap text-reset" href="!#">
-                      <div class="avatar flex-shrink-0"><img class="img-fluid" src="img/avatar-1.jpg" alt="..."/></div><small>John Doe</small></a></li>
-                  <li class="list-inline-item small"><i class="far fa-clock"></i> 2 months ago</li>
-                  <li class="list-inline-item small"><i class="far fa-comment"></i> 12</li>
+                      <div class="avatar flex-shrink-0"><img class="img-fluid" src="{{ object_list.author.profile_pic.url }}" alt="..."/></div><small>{{ object_list.author }}</small></a></li>
+                  <li class="list-inline-item small"><i class="far fa-clock"></i> {{ object_list.timestamp| timesince }} ago</li>
+                  <li class="list-inline-item small"><i class="far fa-comment"></i> {{ obj_list.comment_count}}</li>
                 </ul>
               </div>
             </div>
           </div>
-          <div class="col-lg-5"><img class="img-fluid" src="{% static 'img/featured-pic-1.jpeg' %}" alt="..."></div>
+          <div class="col-lg-5"><img class="img-fluid" src="{{ object_list.thumbnail.url }}" alt="..."></div>
         </div>
+        {% endfor %}
         <!-- Post        -->
-        <div class="row d-flex align-items-stretch g-0">
-          <div class="col-lg-5"><img class="img-fluid" src="{% static 'img/featured-pic-2.jpeg' %}" alt="..."></div>
-          <div class="col-lg-7">
-            <div class="text-inner d-flex align-items-center h-100">
-              <div class="content px-4 px-lg-5">
-                <ul class="list-inline mb-1">
-                  <li class="list-inline-item"><a class="text-uppercase text-dark small fw-bold" href="!#">Business</a></li>
-                  <li class="list-inline-item"><a class="text-uppercase text-dark small fw-bold" href="!#">Technology</a></li>
-                </ul>
-                <h2 class="h4 mb-3"><a class="text-dark" href="post.html">Alberto Savoia Can Teach You About Interior</a></h2>
-                <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                <ul class="list-inline list-separated text-gray-500 mb-0">
-                  <li class="list-inline-item"><a class="d-flex align-items-center flex-wrap text-reset" href="!#">
-                      <div class="avatar flex-shrink-0"><img class="img-fluid" src="{% static 'img/avatar-2.jpg' %}" alt="..."/></div><small>John Doe</small></a></li>
-                  <li class="list-inline-item small"><i class="far fa-clock"></i> 2 months ago</li>
-                  <li class="list-inline-item small"><i class="far fa-comment"></i> 12</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Post                            -->
-        <div class="row d-flex align-items-stretch g-0">
-          <div class="col-lg-7">
-            <div class="text-inner d-flex align-items-center h-100 bg-light">
-              <div class="content px-4 px-lg-5">
-                <ul class="list-inline mb-1">
-                  <li class="list-inline-item"><a class="text-uppercase text-dark small fw-bold" href="!#">Business</a></li>
-                  <li class="list-inline-item"><a class="text-uppercase text-dark small fw-bold" href="!#">Technology</a></li>
-                </ul>
-                <h2 class="h4 mb-3"><a class="text-dark" href="post.html">Alberto Savoia Can Teach You About Interior</a></h2>
-                <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                <ul class="list-inline list-separated text-gray-500 mb-0">
-                  <li class="list-inline-item"><a class="d-flex align-items-center flex-wrap text-reset" href="!#">
-                      <div class="avatar flex-shrink-0"><img class="img-fluid" src="{% static 'img/avatar-3.jpg' %}" alt="..."/></div><small>John Doe</small></a></li>
-                  <li class="list-inline-item small"><i class="far fa-clock"></i> 2 months ago</li>
-                  <li class="list-inline-item small"><i class="far fa-comment"></i> 12</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-5"><img class="img-fluid" src="{% static 'img/featured-pic-3.jpeg' %}" alt="..."></div>
-        </div>
+<!--        <div class="row d-flex align-items-stretch g-0">-->
+<!--          <div class="col-lg-5"><img class="img-fluid" src="{% static 'img/featured-pic-2.jpeg' %}" alt="..."></div>-->
+<!--          <div class="col-lg-7">-->
+<!--            <div class="text-inner d-flex align-items-center h-100">-->
+<!--              <div class="content px-4 px-lg-5">-->
+<!--                <ul class="list-inline mb-1">-->
+<!--                  <li class="list-inline-item"><a class="text-uppercase text-dark small fw-bold" href="!#">Business</a></li>-->
+<!--                  <li class="list-inline-item"><a class="text-uppercase text-dark small fw-bold" href="!#">Technology</a></li>-->
+<!--                </ul>-->
+<!--                <h2 class="h4 mb-3"><a class="text-dark" href="post.html">Alberto Savoia Can Teach You About Interior</a></h2>-->
+<!--                <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>-->
+<!--                <ul class="list-inline list-separated text-gray-500 mb-0">-->
+<!--                  <li class="list-inline-item"><a class="d-flex align-items-center flex-wrap text-reset" href="!#">-->
+<!--                      <div class="avatar flex-shrink-0"><img class="img-fluid" src="{% static 'img/avatar-2.jpg' %}" alt="..."/></div><small>John Doe</small></a></li>-->
+<!--                  <li class="list-inline-item small"><i class="far fa-clock"></i> 2 months ago</li>-->
+<!--                  <li class="list-inline-item small"><i class="far fa-comment"></i> 12</li>-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Post                            &ndash;&gt;-->
+<!--        <div class="row d-flex align-items-stretch g-0">-->
+<!--          <div class="col-lg-7">-->
+<!--            <div class="text-inner d-flex align-items-center h-100 bg-light">-->
+<!--              <div class="content px-4 px-lg-5">-->
+<!--                <ul class="list-inline mb-1">-->
+<!--                  <li class="list-inline-item"><a class="text-uppercase text-dark small fw-bold" href="!#">Business</a></li>-->
+<!--                  <li class="list-inline-item"><a class="text-uppercase text-dark small fw-bold" href="!#">Technology</a></li>-->
+<!--                </ul>-->
+<!--                <h2 class="h4 mb-3"><a class="text-dark" href="post.html">Alberto Savoia Can Teach You About Interior</a></h2>-->
+<!--                <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>-->
+<!--                <ul class="list-inline list-separated text-gray-500 mb-0">-->
+<!--                  <li class="list-inline-item"><a class="d-flex align-items-center flex-wrap text-reset" href="!#">-->
+<!--                      <div class="avatar flex-shrink-0"><img class="img-fluid" src="{% static 'img/avatar-3.jpg' %}" alt="..."/></div><small>John Doe</small></a></li>-->
+<!--                  <li class="list-inline-item small"><i class="far fa-clock"></i> 2 months ago</li>-->
+<!--                  <li class="list-inline-item small"><i class="far fa-comment"></i> 12</li>-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col-lg-5"><img class="img-fluid" src="{% static 'img/featured-pic-3.jpeg' %}" alt="..."></div>-->
+<!--        </div>-->
       </div>
     </section>
     <!-- Divider Section-->
