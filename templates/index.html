@@ -1,202 +1,216 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Black And White Bootstrap Landing Page / Portfolio</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="all,follow">
-    <!-- Google fonts - Montserrat for headings, Cardo for copy-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&amp;family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet">
-    <!-- Lightbox-->
-    <link rel="stylesheet" href="vendor/glightbox/css/glightbox.min.css">
-    <!-- Leaflet-->
-    <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
-    <!-- theme stylesheet-->
-    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
-    <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="css/custom.css">
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="img/favicon.png">
-  </head>
-  <body class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0">
-    <section class="intro dark-overlay bg-cover bg-fixed bg-center d-flex align-items-center" id="intro" style="background-image: url('img/ein-steig.jpg');">       
-      <div class="overlay-content w-100 text-white">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-7 col-md-12 mx-auto">
-              <p class="fst-italic intro-text">Oh, hello, nice to meet you!</p>
-              <h1 class="text-uppercase intro-heading text-uppercase letter-spacing-2">I am B&amp;W Landing page or portfolio Theme.</h1>
-              <p class="fst-italic intro-text mb-0">I am a ready to be your portfolio, telling your stories and short presentations.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- intro end-->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top border-bottom border-gray-200 bg-white py-lg-0" id="navbar">
-      <div class="container"><a class="navbar-brand" href="#intro"><img class="img-fluid" src="img/logo.png" alt=""></a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+{% extends "base.html"%}
+
+{% block content %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-3">
+      <div class="container py-1"><a class="navbar-brand text-sm fw-bold text-dark" href="index.html">Bootstrap Blog</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link py-lg-3 active" href="#intro">Home</a></li>
-            <li class="nav-item"><a class="nav-link py-lg-3" href="#about">About </a></li>
-            <li class="nav-item"><a class="nav-link py-lg-3" href="#services">Services</a></li>
-            <li class="nav-item"><a class="nav-link py-lg-3" href="#portfolio">Portfolio</a></li>
-            <li class="nav-item"><a class="nav-link py-lg-3" href="#text">Text</a></li>
-            <li class="nav-item"><a class="nav-link py-lg-3" href="#contact">Contact</a></li>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item"><a class="nav-link active " href="index.html">Home</a>
+            </li>
+            <li class="nav-item"><a class="nav-link " href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item"><a class="nav-link " href="post.html">Post</a>
+            </li>
+            <li class="nav-item"><a class="nav-link " href="#">Contact</a>
+            </li>
+            <li class="nav-item mt-2 mt-lg-0">
+              <ul class="list-inline d-flex align-items-center">
+                <li class="list-inline-item mx-lg-2 px-2 border-start border-end"><a class="search-btn nav-link small py-0 text-dark" href="#"><i class="fas fa-search"></i></a></li>
+                <li class="list-inline-item d-flex align-items-end small"><a class="text-dark" href="#">EN</a><span class="underscore mb-1"></span><a class="text-gray-500" href="#">ES</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
-    <!-- about-->
-    <section id="about">
-      <div class="container">
-        <div class="row gy-4 align-items-center">
-          <div class="col-lg-6">
-            <h2 class="underline text-uppercase">About me</h2>
-            <p class="lead">This can be an about section.</p>
-            <p>Impossible considered invitation him men instrument saw celebrated unpleasant. Put rest and must set kind next many near nay. He exquisite continued explained middleton am. Voice hours young woody has she think equal. Estate moment he at on wonder at season little. Six garden result summer set family esteem nay estate. End admiration mrs unreserved discovered comparison especially invitation. </p>
-            <p>Delightful unreserved impossible few estimating men favourable see entreaties. She propriety immediate was improving. He or entrance humoured likewise moderate. Much nor game son say feel. Fat make met can must form into gate. Me we offending prevailed discovery. </p>
+    <div class="search-area">
+      <div class="search-area-inner d-flex align-items-center justify-content-center position-relative">
+        <div class="close-btn position-absolute p-4 top-0 end-0 cursor-pointer z-index-20"><i class="fas fa-times"></i></div>
+        <div class="row d-flex justify-content-center w-100">
+          <div class="col-md-8">
+            <form action="#">
+              <div class="input-group border-bottom">
+                <input class="form-control form-control-lg border-0 shadow-0 ps-0 bg-none px-0" type="search" placeholder="What are you looking for?">
+                <button class="btn btn-link btn-sm shadow-0 px-0 btn-lg text-dark" type="submit"><i class="fas fa-search"></i></button>
+              </div>
+            </form>
           </div>
-          <div class="col-lg-5 mx-auto">
-            <p><img class="img-fluid rounded-circle" src="img/japan-mountains.jpg" alt=""></p>
+        </div>
+      </div>
+    </div>
+    <!-- Hero Section-->
+    <section class="hero position-relative" style="background: url(img/hero.jpg); background-size: cover; background-position: center center">
+      <div class="container text-white py-5">
+        <div class="row py-lg-5">
+          <div class="col-lg-7">
+            <h1>Bootstrap 5 Blog - A free template by Bootstrapious</h1><a class="link-underline mt-3" href="#!">Discover More</a>
+          </div>
+        </div><a class="continue text-gray-400 position-absolute bottom-0 mb-5 z-index-20 link-transition small text-uppercase" href="#intro"><i class="fas fa-long-arrow-alt-down"></i> Scroll Down</a>
+      </div>
+    </section>
+    <!-- Intro Section-->
+    <section id="intro">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <h2 class="h3">Some great intro here</h2>
+            <p class="text-lg fw-light lh-lg mb-0">Place a nice <strong>introduction</strong> here <strong>to catch reader's attention</strong>. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderi.</p>
           </div>
         </div>
       </div>
     </section>
-    <!-- about end-->
-    <!-- Services-->
-    <section class="bg-gray-200" id="services">
+    <section class="pt-0">
       <div class="container">
-        <div class="row services">
-          <div class="col-lg-12">
-            <h2 class="underline text-uppercase">Services</h2>
-            <div class="row gy-4 gx-5">
-              <div class="col-md-4">
-                <div class="mb-4"><i class="fas fa-desktop fa-3x"></i></div>
-                <h5>Webdesign</h5>
-                <p>Fifth abundantly made Give sixth hath. Cattle creature i be don't them.</p>
+        <!-- Post-->
+        <div class="row d-flex align-items-stretch g-0">
+          <div class="col-lg-7">
+            <div class="text-inner d-flex align-items-center h-100 bg-light">
+              <div class="content px-4 px-lg-5">
+                <ul class="list-inline mb-1">
+                  <li class="list-inline-item"><a class="text-uppercase text-dark small fw-bold" href="!#">Business</a></li>
+                  <li class="list-inline-item"><a class="text-uppercase text-dark small fw-bold" href="!#">Technology</a></li>
+                </ul>
+                <h2 class="h4 mb-3"><a class="text-dark" href="post.html">Alberto Savoia Can Teach You About Interior</a></h2>
+                <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                <ul class="list-inline list-separated text-gray-500 mb-0">
+                  <li class="list-inline-item"><a class="d-flex align-items-center flex-wrap text-reset" href="!#">
+                      <div class="avatar flex-shrink-0"><img class="img-fluid" src="img/avatar-1.jpg" alt="..."/></div><small>John Doe</small></a></li>
+                  <li class="list-inline-item small"><i class="far fa-clock"></i> 2 months ago</li>
+                  <li class="list-inline-item small"><i class="far fa-comment"></i> 12</li>
+                </ul>
               </div>
-              <div class="col-md-4">
-                <div class="mb-4"><i class="fas fa-print fa-3x"></i></div>
-                <h5>Print</h5>
-                <p>Advantage old had otherwise sincerity dependent additions. It in adapted natural.</p>
-              </div>
-              <div class="col-md-4">
-                <div class="mb-4"><i class="fas fa-globe-americas fa-3x"></i></div>
-                <h5>SEO and SEM</h5>
-                <p>Am terminated it excellence invitation projection as. She graceful shy. </p>
+            </div>
+          </div>
+          <div class="col-lg-5"><img class="img-fluid" src="img/featured-pic-1.jpeg" alt="..."></div>
+        </div>
+        <!-- Post        -->
+        <div class="row d-flex align-items-stretch g-0">
+          <div class="col-lg-5"><img class="img-fluid" src="img/featured-pic-2.jpeg" alt="..."></div>
+          <div class="col-lg-7">
+            <div class="text-inner d-flex align-items-center h-100">
+              <div class="content px-4 px-lg-5">
+                <ul class="list-inline mb-1">
+                  <li class="list-inline-item"><a class="text-uppercase text-dark small fw-bold" href="!#">Business</a></li>
+                  <li class="list-inline-item"><a class="text-uppercase text-dark small fw-bold" href="!#">Technology</a></li>
+                </ul>
+                <h2 class="h4 mb-3"><a class="text-dark" href="post.html">Alberto Savoia Can Teach You About Interior</a></h2>
+                <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                <ul class="list-inline list-separated text-gray-500 mb-0">
+                  <li class="list-inline-item"><a class="d-flex align-items-center flex-wrap text-reset" href="!#">
+                      <div class="avatar flex-shrink-0"><img class="img-fluid" src="img/avatar-2.jpg" alt="..."/></div><small>John Doe</small></a></li>
+                  <li class="list-inline-item small"><i class="far fa-clock"></i> 2 months ago</li>
+                  <li class="list-inline-item small"><i class="far fa-comment"></i> 12</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
+        <!-- Post                            -->
+        <div class="row d-flex align-items-stretch g-0">
+          <div class="col-lg-7">
+            <div class="text-inner d-flex align-items-center h-100 bg-light">
+              <div class="content px-4 px-lg-5">
+                <ul class="list-inline mb-1">
+                  <li class="list-inline-item"><a class="text-uppercase text-dark small fw-bold" href="!#">Business</a></li>
+                  <li class="list-inline-item"><a class="text-uppercase text-dark small fw-bold" href="!#">Technology</a></li>
+                </ul>
+                <h2 class="h4 mb-3"><a class="text-dark" href="post.html">Alberto Savoia Can Teach You About Interior</a></h2>
+                <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                <ul class="list-inline list-separated text-gray-500 mb-0">
+                  <li class="list-inline-item"><a class="d-flex align-items-center flex-wrap text-reset" href="!#">
+                      <div class="avatar flex-shrink-0"><img class="img-fluid" src="img/avatar-3.jpg" alt="..."/></div><small>John Doe</small></a></li>
+                  <li class="list-inline-item small"><i class="far fa-clock"></i> 2 months ago</li>
+                  <li class="list-inline-item small"><i class="far fa-comment"></i> 12</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5"><img class="img-fluid" src="img/featured-pic-3.jpeg" alt="..."></div>
+        </div>
       </div>
     </section>
-    <!-- Services end-->
-    <!-- Portfolio / gallery-->
-    <section id="portfolio">
-      <div class="container">
+    <!-- Divider Section-->
+    <section class="divider" style="background: url(img/divider-bg.jpg); background-size: cover; background-position: center bottom">
+      <div class="container text-white">
         <div class="row">
-          <div class="col-md-12 col-lg-8">
-            <h2 class="underline text-uppercase">Portfolio</h2>
-            <p>Put your portfolio or gallery images here for example. Able an hope of body. Any nay shyness article matters own removal nothing his forming. Gay own additions education satisfied the perpetual. If he cause manor happy. Without farther she exposed saw man led. Along on happy could cease green oh</p>
-          </div>
-        </div>
-        <div class="row g-4">
-          <div class="col-md-4"><a class="glightbox d-block" href="img/portfolio-1.jpg" data-gallery="gallery" data-glightbox="Gallery image NaN"><img class="img-fluid" src="img/portfolio-1.jpg" alt="image"></a></div>
-          <div class="col-md-4"><a class="glightbox d-block" href="img/portfolio-2.jpg" data-gallery="gallery" data-glightbox="Gallery image NaN"><img class="img-fluid" src="img/portfolio-2.jpg" alt="image"></a></div>
-          <div class="col-md-4"><a class="glightbox d-block" href="img/portfolio-3.jpg" data-gallery="gallery" data-glightbox="Gallery image NaN"><img class="img-fluid" src="img/portfolio-3.jpg" alt="image"></a></div>
-          <div class="col-md-4"><a class="glightbox d-block" href="img/portfolio-4.jpg" data-gallery="gallery" data-glightbox="Gallery image NaN"><img class="img-fluid" src="img/portfolio-4.jpg" alt="image"></a></div>
-          <div class="col-md-4"><a class="glightbox d-block" href="img/portfolio-5.jpg" data-gallery="gallery" data-glightbox="Gallery image NaN"><img class="img-fluid" src="img/portfolio-5.jpg" alt="image"></a></div>
-          <div class="col-md-4"><a class="glightbox d-block" href="img/portfolio-6.jpg" data-gallery="gallery" data-glightbox="Gallery image NaN"><img class="img-fluid" src="img/portfolio-6.jpg" alt="image"></a></div>
-          <div class="col-md-4"><a class="glightbox d-block" href="img/portfolio-7.jpg" data-gallery="gallery" data-glightbox="Gallery image NaN"><img class="img-fluid" src="img/portfolio-7.jpg" alt="image"></a></div>
-          <div class="col-md-4"><a class="glightbox d-block" href="img/portfolio-8.jpg" data-gallery="gallery" data-glightbox="Gallery image NaN"><img class="img-fluid" src="img/portfolio-8.jpg" alt="image"></a></div>
-          <div class="col-md-4"><a class="glightbox d-block" href="img/portfolio-9.jpg" data-gallery="gallery" data-glightbox="Gallery image NaN"><img class="img-fluid" src="img/portfolio-9.jpg" alt="image"></a></div>
-        </div>
-      </div>
-    </section>
-    <!-- Portfolio / gallery end-->
-    <!-- text page-->
-    <section class="bg-dark text-gray-100" id="text">
-      <div class="container">
-        <h2 class="underline underline-white">Text page</h2>
-        <div class="row">
-          <div class="col-md-6">
-            <p>Able an hope of body. Any nay shyness article matters own removal nothing his forming. Gay own additions education satisfied the perpetual. If he cause manor happy. Without farther she exposed saw man led. Along on happy could cease green oh. </p>
-            <p>Betrayed cheerful declared end and. Questions we additions is extremely incommode. Next half add call them eat face. Age lived smile six defer bed their few. Had admitting concluded too behaviour him she. Of death to or to being other. </p>
-          </div>
-          <div class="col-md-6">
-            <p>Effects present letters inquiry no an removed or friends. Desire behind latter me though in. Supposing shameless am he engrossed up additions. My possible peculiar together to. Desire so better am cannot he up before points. Remember mistaken opinions it pleasure of debating. Court front maids forty if aware their at. Chicken use are pressed removed. </p>
-            <p>Saw yet kindness too replying whatever marianne. Old sentiments resolution admiration unaffected its mrs literature. Behaviour new set existence dashwoods. It satisfied to mr commanded consisted disposing engrossed. Tall snug do of till on easy. Form not calm new fail. </p>
+          <div class="col-md-7">
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</h2><a class="link-underline mt-3" href="#!">View More</a>
           </div>
         </div>
       </div>
     </section>
-    <!-- text page end-->
-    <!-- contact-->
-    <section class="pb-5" id="contact">
+    <!-- Latest Posts -->
+    <section>
       <div class="container">
-        <h2 class="underline">Contact</h2>
+        <header class="mb-5"> 
+          <h2>Latest from the blog</h2>
+          <p class="text-lg fw-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </header>
         <div class="row gy-4">
-          <div class="col-lg-6">
-            <form class="contact-form" id="contact-form" method="post">
-              <div class="row gy-3">
-                <div class="col-md-6">
-                  <label class="form-label" for="name">Your firstname *</label>
-                  <input class="form-control" type="text" name="name" placeholder="Enter your firstname" required>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label" for="surname">Your lastname *</label>
-                  <input class="form-control" type="text" name="surname" placeholder="Enter your  lastname" required>
-                </div>
-                <div class="col-12">
-                  <label class="form-label" for="surname">Your email *</label>
-                  <input class="form-control" type="email" name="email" placeholder="Enter your  email" required>
-                </div>
-                <div class="col-12">
-                  <label class="form-label" for="surname">Your message for us *</label>
-                  <textarea class="form-control" rows="4" name="message" placeholder="Enter your message" required></textarea>
-                </div>
-                <div class="col-12 text-center">
-                  <input class="btn btn-outline-primary w-100" type="submit" name="name" value="Send message">
-                </div>
+          <div class="col-md-4"><a class="mb-3" href="post.html"><img class="img-fluid" src="img/blog-1.jpg" alt="..."/></a>
+            <div class="d-flex align-items-center justify-content-between mb-2"><small class="text-gray-500">20 May | 2016</small><a class="small fw-bold text-uppercase small" href="!#">Business</a></div>
+            <h3 class="h4"><a class="text-dark" href="post.html">Ways to remember your important ideas</a></h3>
+            <p class="text-muted text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+          </div>
+          <div class="col-md-4"><a class="mb-3" href="post.html"><img class="img-fluid" src="img/blog-2.jpg" alt="..."/></a>
+            <div class="d-flex align-items-center justify-content-between mb-2"><small class="text-gray-500">20 May | 2016</small><a class="small fw-bold text-uppercase small" href="!#">Technology</a></div>
+            <h3 class="h4"><a class="text-dark" href="post.html">Diversity in Engineering: Effect on Questions</a></h3>
+            <p class="text-muted text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+          </div>
+          <div class="col-md-4"><a class="mb-3" href="post.html"><img class="img-fluid" src="img/blog-3.jpg" alt="..."/></a>
+            <div class="d-flex align-items-center justify-content-between mb-2"><small class="text-gray-500">20 May | 2016</small><a class="small fw-bold text-uppercase small" href="!#">Financial</a></div>
+            <h3 class="h4"><a class="text-dark" href="post.html">Alberto Savoia Can Teach You About Interior</a></h3>
+            <p class="text-muted text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Newsletter Section-->
+    <section class="pt-0">    
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Subscribe to Newsletter</h2>
+            <p class="text-lg lh-lg fw-light mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="col-md-8">
+            <form action="#">
+              <div class="input-group">
+                <input class="form-control p-3" type="email" name="email" id="email" placeholder="Type your email address">
+                <button class="btn btn-dark" type="submit">Subscribe</button>
               </div>
             </form>
           </div>
-          <div class="col-lg-6">
-            <p>Effects present letters inquiry no an removed or friends. Desire behind latter me though in. Supposing shameless am he engrossed up additions. My possible peculiar together to. Desire so better am cannot he up before points. Remember mistaken opinions it pleasure of debating. Court front maids forty if aware their at. Chicken use are pressed removed. </p>
-            <p>Able an hope of body. Any nay shyness article matters own removal nothing his forming. Gay own additions education satisfied the perpetual. If he cause manor happy. Without farther she exposed saw man led. Along on happy could cease green oh. </p>
-            <p><a class="social-link facebook" href="#!" title=""><i class="fab fa-facebook-f"></i></a><a class="social-link twitter" href="#!" title=""><i class="fab fa-twitter"></i></a><a class="social-link instagram" href="#!" title=""><i class="fab fa-instagram"></i></a><a class="social-link pinterest" href="#!" title=""><i class="fab fa-pinterest"></i></a><a class="social-link email" href="#!" title=""><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </section>
+    <!-- Gallery Section-->
+    <section class="p-0">
+      <div class="row g-0">
+        <div class="col-lg-3 col-sm-6"><a class="glightbox d-block position-relative" href="img/gallery-1.jpg" data-gallery="gallery" data-glightbox="Gallery image 1"><img class="img-fluid" src="img/gallery-1.jpg" alt="image">
+            <div class="fsc-hover-overlay"><i class="fas fa-search fsc-hover-overlay-icon"></i></div></a></div>
+        <div class="col-lg-3 col-sm-6"><a class="glightbox d-block position-relative" href="img/gallery-2.jpg" data-gallery="gallery" data-glightbox="Gallery image 2"><img class="img-fluid" src="img/gallery-2.jpg" alt="image">
+            <div class="fsc-hover-overlay"><i class="fas fa-search fsc-hover-overlay-icon"></i></div></a></div>
+        <div class="col-lg-3 col-sm-6"><a class="glightbox d-block position-relative" href="img/gallery-3.jpg" data-gallery="gallery" data-glightbox="Gallery image 3"><img class="img-fluid" src="img/gallery-3.jpg" alt="image">
+            <div class="fsc-hover-overlay"><i class="fas fa-search fsc-hover-overlay-icon"></i></div></a></div>
+        <div class="col-lg-3 col-sm-6"><a class="glightbox d-block position-relative" href="img/gallery-4.jpg" data-gallery="gallery" data-glightbox="Gallery image 4"><img class="img-fluid" src="img/gallery-4.jpg" alt="image">
+            <div class="fsc-hover-overlay"><i class="fas fa-search fsc-hover-overlay-icon"></i></div></a></div>
+      </div>
+    </section>
+
+    <div class="copyrights text-white py-4" style="background: #090909">
+      <div class="container">
+        <div class="row text-center gy-2">
+          <div class="col-md-6 text-md-start">
+            <p class="mb-0 fw-light text-sm">&copy; 2022. All rights reserved. Your great site.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p class="mb-0 text-sm">Template By <a class="text-reset fw-light" href="https://bootstrapious.com/p/bootstrap-blog">Bootstrapious</a>
+              <!-- Please do not remove the backlink to Bootstrap Temple unless you purchase an attribution-free license @ Bootstrap Temple or support us at http://bootstrapious.com/donate. It is part of the license conditions. Thanks for understanding :)                         -->
             </p>
           </div>
         </div>
       </div>
-    </section>
-    <div id="map"></div>
-    <footer class="bg-black text-gray-100 py-5">
-      <div class="container py-4">
-        <div class="row copyright gy-2">
-          <div class="col-md-6">
-            <p class="fst-italic mb-0 text-center text-md-start">&copy; 2022 Your name/company goes here</p>
-          </div>
-          <div class="col-md-6">
-            <p class="fst-italic mb-0 text-center text-md-end">Template by <a class='text-reset' href="https://bootstrapious.com/p/how-to-build-a-working-bootstrap-contact-form">Bootstrapious</a></p>
-            <!-- Please do not remove the backlink to us. It is part of the licence conditions. Thanks for understanding :)-->
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- JavaScript files-->
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="vendor/leaflet/leaflet.js"></script>
-    <script src="js/leaflet.js"></script>
-    <script src="js/theme.js"></script>
-    <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  </body>
-</html>
+    </div>
+{% endblock content %}
