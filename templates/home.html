@@ -1,0 +1,178 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+  {% block content %}
+  <body class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0">
+    <section class="intro dark-overlay bg-cover bg-fixed bg-center d-flex align-items-center" id="intro" style="background-image: url('img/ein-steig.jpg');">       
+      <div class="overlay-content w-100 text-white">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 col-md-12 mx-auto">
+              <p class="fst-italic intro-text">Oh, hello, nice to meet you!</p>
+              <h1 class="text-uppercase intro-heading text-uppercase letter-spacing-2">I am B&amp;W Landing page or portfolio Theme.</h1>
+              <p class="fst-italic intro-text mb-0">I am a ready to be your portfolio, telling your stories and short presentations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- intro end-->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top border-bottom border-gray-200 bg-white py-lg-0" id="navbar">
+      <div class="container"><a class="navbar-brand" href="#intro"><img class="img-fluid" src="{% static 'img/logo.png' %}" alt=""></a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link py-lg-3 active" href="#intro">Home</a></li>
+            <li class="nav-item"><a class="nav-link py-lg-3" href="#about">About </a></li>
+            <li class="nav-item"><a class="nav-link py-lg-3" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link py-lg-3" href="#portfolio">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link py-lg-3" href="#text">Text</a></li>
+            <li class="nav-item"><a class="nav-link py-lg-3" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- about-->
+    <section id="about">
+      <div class="container">
+        <div class="row gy-4 align-items-center">
+          <div class="col-lg-6">
+            <h2 class="underline text-uppercase">About me</h2>
+            <p class="lead">This can be an about section.</p>
+            <p>Impossible considered invitation him men instrument saw celebrated unpleasant. Put rest and must set kind next many near nay. He exquisite continued explained middleton am. Voice hours young woody has she think equal. Estate moment he at on wonder at season little. Six garden result summer set family esteem nay estate. End admiration mrs unreserved discovered comparison especially invitation. </p>
+            <p>Delightful unreserved impossible few estimating men favourable see entreaties. She propriety immediate was improving. He or entrance humoured likewise moderate. Much nor game son say feel. Fat make met can must form into gate. Me we offending prevailed discovery. </p>
+          </div>
+          <div class="col-lg-5 mx-auto">
+            <p><img class="img-fluid rounded-circle" src="{% static 'img/japan-mountains.jpg' %}" alt=""></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- about end-->
+    <!-- Services-->
+    <section class="bg-gray-200" id="services">
+      <div class="container">
+        <div class="row services">
+          <div class="col-lg-12">
+            <h2 class="underline text-uppercase">Services</h2>
+            <div class="row gy-4 gx-5">
+              <div class="col-md-4">
+                <div class="mb-4"><i class="fas fa-desktop fa-3x"></i></div>
+                <h5>Webdesign</h5>
+                <p>Fifth abundantly made Give sixth hath. Cattle creature i be don't them.</p>
+              </div>
+              <div class="col-md-4">
+                <div class="mb-4"><i class="fas fa-print fa-3x"></i></div>
+                <h5>Print</h5>
+                <p>Advantage old had otherwise sincerity dependent additions. It in adapted natural.</p>
+              </div>
+              <div class="col-md-4">
+                <div class="mb-4"><i class="fas fa-globe-americas fa-3x"></i></div>
+                <h5>SEO and SEM</h5>
+                <p>Am terminated it excellence invitation projection as. She graceful shy. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services end-->
+    <!-- Portfolio / gallery-->
+    <section id="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <h2 class="underline text-uppercase">Portfolio</h2>
+            <p>Put your portfolio or gallery images here for example. Able an hope of body. Any nay shyness article matters own removal nothing his forming. Gay own additions education satisfied the perpetual. If he cause manor happy. Without farther she exposed saw man led. Along on happy could cease green oh</p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4"><a class="glightbox d-block" href="{% static 'img/portfolio-1.jpg' %}" data-gallery="gallery" data-glightbox="Gallery image NaN"><img class="img-fluid" src="{% static 'img/portfolio-1.jpg' %}" alt="image"></a></div>
+          <div class="col-md-4"><a class="glightbox d-block" href="{% static 'img/portfolio-2.jpg' %}" data-gallery="gallery" data-glightbox="Gallery image NaN"><img class="img-fluid" src="{% static 'img/portfolio-2.jpg' %}" alt="image"></a></div>
+          <div class="col-md-4"><a class="glightbox d-block" href="{% static 'img/portfolio-3.jpg' %}" data-gallery="gallery" data-glightbox="Gallery image NaN"><img class="img-fluid" src="{% static 'img/portfolio-3.jpg' %}" alt="image"></a></div>
+          <div class="col-md-4"><a class="glightbox d-block" href="{% static 'img/portfolio-4.jpg' %}" data-gallery="gallery" data-glightbox="Gallery image NaN"><img class="img-fluid" src="{% static 'img/portfolio-4.jpg' %}" alt="image"></a></div>
+          <div class="col-md-4"><a class="glightbox d-block" href="{% static 'img/portfolio-5.jpg' %}" data-gallery="gallery" data-glightbox="Gallery image NaN"><img class="img-fluid" src="{% static 'img/portfolio-5.jpg' %}" alt="image"></a></div>
+          <div class="col-md-4"><a class="glightbox d-block" href="{% static 'img/portfolio-6.jpg' %}" data-gallery="gallery" data-glightbox="Gallery image NaN"><img class="img-fluid" src="{% static 'img/portfolio-6.jpg' %}" alt="image"></a></div>
+          <div class="col-md-4"><a class="glightbox d-block" href="{% static 'img/portfolio-7.jpg' %}" data-gallery="gallery" data-glightbox="Gallery image NaN"><img class="img-fluid" src="{% static 'img/portfolio-7.jpg' %}" alt="image"></a></div>
+          <div class="col-md-4"><a class="glightbox d-block" href="{% static 'img/portfolio-8.jpg' %}" data-gallery="gallery" data-glightbox="Gallery image NaN"><img class="img-fluid" src="{% static 'img/portfolio-8.jpg' %}" alt="image"></a></div>
+          <div class="col-md-4"><a class="glightbox d-block" href="{% static 'img/portfolio-9.jpg' %}" data-gallery="gallery" data-glightbox="Gallery image NaN"><img class="img-fluid" src="{% static 'img/portfolio-9.jpg' %}" alt="image"></a></div>
+        </div>
+      </div>
+    </section>
+    <!-- Portfolio / gallery end-->
+    <!-- text page-->
+    <section class="bg-dark text-gray-100" id="text">
+      <div class="container">
+        <h2 class="underline underline-white">Text page</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <p>Able an hope of body. Any nay shyness article matters own removal nothing his forming. Gay own additions education satisfied the perpetual. If he cause manor happy. Without farther she exposed saw man led. Along on happy could cease green oh. </p>
+            <p>Betrayed cheerful declared end and. Questions we additions is extremely incommode. Next half add call them eat face. Age lived smile six defer bed their few. Had admitting concluded too behaviour him she. Of death to or to being other. </p>
+          </div>
+          <div class="col-md-6">
+            <p>Effects present letters inquiry no an removed or friends. Desire behind latter me though in. Supposing shameless am he engrossed up additions. My possible peculiar together to. Desire so better am cannot he up before points. Remember mistaken opinions it pleasure of debating. Court front maids forty if aware their at. Chicken use are pressed removed. </p>
+            <p>Saw yet kindness too replying whatever marianne. Old sentiments resolution admiration unaffected its mrs literature. Behaviour new set existence dashwoods. It satisfied to mr commanded consisted disposing engrossed. Tall snug do of till on easy. Form not calm new fail. </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- text page end-->
+    <!-- contact-->
+    <section class="pb-5" id="contact">
+      <div class="container">
+        <h2 class="underline">Contact</h2>
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <form class="contact-form" id="contact-form" method="post">
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="name">Your firstname *</label>
+                  <input class="form-control" type="text" name="name" placeholder="Enter your firstname" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="surname">Your lastname *</label>
+                  <input class="form-control" type="text" name="surname" placeholder="Enter your  lastname" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="surname">Your email *</label>
+                  <input class="form-control" type="email" name="email" placeholder="Enter your  email" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="surname">Your message for us *</label>
+                  <textarea class="form-control" rows="4" name="message" placeholder="Enter your message" required></textarea>
+                </div>
+                <div class="col-12 text-center">
+                  <input class="btn btn-outline-primary w-100" type="submit" name="name" value="Send message">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-6">
+            <p>Effects present letters inquiry no an removed or friends. Desire behind latter me though in. Supposing shameless am he engrossed up additions. My possible peculiar together to. Desire so better am cannot he up before points. Remember mistaken opinions it pleasure of debating. Court front maids forty if aware their at. Chicken use are pressed removed. </p>
+            <p>Able an hope of body. Any nay shyness article matters own removal nothing his forming. Gay own additions education satisfied the perpetual. If he cause manor happy. Without farther she exposed saw man led. Along on happy could cease green oh. </p>
+            <p><a class="social-link facebook" href="#!" title=""><i class="fab fa-facebook-f">&nbsp;</i></a><a class="social-link twitter" href="#!" title=""><i class="fab fa-twitter">&nbsp;</i></a><a class="social-link instagram" href="#!" title=""><i class="fab fa-instagram">&nbsp;</i></a><a class="social-link pinterest" href="#!" title=""><i class="fab fa-pinterest">&nbsp;</i></a><a class="social-link email" href="#!" title=""><i class="fas fa-envelope">&nbsp;</i></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="map"></div>
+    <footer class="bg-black text-gray-100 py-5">
+      <div class="container py-4">
+        <div class="row copyright gy-2">
+          <div class="col-md-6">
+            <p class="fst-italic mb-0 text-center text-md-start">&copy; 2022 Your name/company goes here</p>
+          </div>
+          <div class="col-md-6">
+            <p class="fst-italic mb-0 text-center text-md-end">Template by <a class='text-reset' href="https://bootstrapious.com/p/how-to-build-a-working-bootstrap-contact-form">Bootstrapious</a></p>
+            <!-- Please do not remove the backlink to us. It is part of the licence conditions. Thanks for understanding :)-->
+          </div>
+        </div>
+      </div>
+    </footer>
+   
+   
+   
+  </body>
+{% endblock %}
